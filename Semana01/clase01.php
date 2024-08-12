@@ -28,9 +28,50 @@ while($i < count($arreglo)){
  */
 # Programacion Orientada a Objetos
 # Consumir los recurso de Alumnos
-$alumno = new Alumno("Juan", "Perez", 20, "2DAM", 7);
-echo '<div class="card-opening"><b>' . $alumno->getNombre() . '</b></div>';
-echo '<div class="card-opening"><b>' . $alumno->aporbar() . '</b></div>';
+$ListaAlumnos = [
+	new Alumno("Juan", "Perez", 20, "2DAM", 7),
+ 	new Alumno("Adrian", "Arcos", 20, "POO", 7),
+ 	new Alumno("Alexis", "Pazmino", 20, "Aplicaciones Distribuidas", 7),
+ 	new Alumno("Bryan", "Moran", 20, "Aplicaciones Distribuidas", 7),
+ 	new Alumno("Carlos", "Pintag", 20, "Aplicaciones Distribuidas", 7),
+ 	new Alumno("Celso", "Pastasa", 20, "Aplicaciones Distribuidas", 7),
+ 	new Alumno("Cristian", "Pazmino", 20, "POO", 7),
+ 	new Alumno("Juan", "Perez", 20, "Programacion Web", 7)
+ ];
+# Variable proiedad o Metodo
+#echo '<div class="card-opening"><b>' . $ListaAlumnos->getNombre() . '</b></div>';
+#echo '<div class="card-opening"><b>' . $alumno->aporbar() . '</b></div>';
+echo '<table class="table table-responsive table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nombre</th>
+					<th>Apellidos</th>
+					<th>Edad</th>
+					<th>Asignatura</th>
+					<th>Calificacion</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>';
+foreach ($ListaAlumnos as $index => $alumno) {
+	echo '<tr>
+		<td>' . $index + 1 . '</td>
+		<td>' . $alumno->getNombre() . '</td>
+		<td>' . $alumno->getApellido() . '</td>
+		<td>' . $alumno->getEdad() . '</td>
+		<td>' . $alumno->getCurso() . '</td>
+		<td>' . $alumno->getNota() . '</td>
+		<td>
+			<button class="btn btn-info">Ver</button>
+			<button class="btn btn-primary">Editar</button>
+			<button class="btn btn-danger">Eliminar</button>
+		</td>
+	</tr>';	
+}
+echo '</tbody>
+		</table>';
+
 
 class Alumno {
 	public $nombre;
