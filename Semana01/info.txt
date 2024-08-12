@@ -1,0 +1,9 @@
+url 
+
+www.google.com?op=todos
+
+localhost/Sexto-Aplicaciones-Web/Semana01/clase02.php?op=1
+Controlador
+$_GET["op"]
+
+$POST["cedula"]
