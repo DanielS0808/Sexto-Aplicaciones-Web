@@ -25,7 +25,7 @@ class Alumnos {
 	public function insertar($idAlumno, $Nombre, $Apellido, $Edad) { //Insert Into alumnos Values ()
 		$con = new ClaseConectar();
 		$con = $con->ProcedemientoParaConectar();
-		$cadena = "Insert Into alumnos (Nombre, Apellido, Edad) Values('$Nombre', '$Apellido', $Edad)";
+		$cadena = "Insert Into alumnos(Nombre, Apellido, Edad) Values('$Nombre','$Apellido',$Edad)";				
 		$datos = mysqli_query($con, $cadena);
 		$con->close();
 		return $datos;
