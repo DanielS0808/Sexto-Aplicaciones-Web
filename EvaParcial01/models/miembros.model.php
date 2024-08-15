@@ -1,31 +1,31 @@
 <?php
 require_once('../config/config.php');
 
-class Clubesmodel
+class Miembrosmodel
 {
     public function todos() {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoParaConectar();
-        $cadena = "Select * From `clubes`";
+        $cadena = "Select * From `miembros`";
         $datos = mysqli_query($con, $cadena);
         $con->close();
         return $datos;
     }
 
-    public function uno($idClubes) {
+    public function uno($idmiembros) {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoParaConectar();        
-		$cadena = "SELECT * FROM `clubes` WHERE `idClubes`=$idClubes";
+		$cadena = "SELECT * FROM `miembros` WHERE `idmiembros`=$idmiembros";
         $datos = mysqli_query($con, $cadena);
         $con->close();
         return $datos;
     }
 	
-    public function insertar($Nombre, $Deporte, $Ubicacion, $Fecha_fundacion) {
+    public function insertar($Nombre, $Apellido, $Email, $Telefono) {
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
-            $cadena = "INSERT INTO `clubes` ( `Nombre`, `Deporte`, `Ubicacion`, `Fecha_fundacion`) VALUES ($Nombre, $Deporte, $Ubicacion, $Fecha_fundacion)";
+            $cadena = "INSERT INTO `miembros` ( `Nombre`, `Apellido`, `Email`, `Telefono`) VALUES ($Nombre, $Apellido, $Email, $Telefono)";
             if (mysqli_query($con, $cadena)) {
                 return $con->insert_id;
             } else {
@@ -37,11 +37,11 @@ class Clubesmodel
             $con->close();
         }
     }
-    public function actualizar($idClubes, $Nombre, $Deporte, $Ubicacion, $Fecha_fundacion) {
+    public function actualizar($Nombre, $Apellido, $Email, $Telefono) {
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
-            $cadena = "UPDATE `clubes` SET `Nombre`='$Nombre',`Deporte`='$Deporte',`Ubicacion`='$Ubicacion',`Fecha_fundacion`='$Fecha_fundacion' WHERE `idClubes` = $idClubes";
+            $cadena = "UPDATE `miembros` SET `Nombre`='$Nombre',`Apellido`='$Apellido',`Email`='$Email',`Telefono`='$Telefono' WHERE `idmiembros` = $idmiembros";
             if (mysqli_query($con, $cadena)) {
                 return $idProveedores;
             } else {
@@ -53,11 +53,11 @@ class Clubesmodel
             $con->close();
         }
     }
-    public function eliminar($idClubes) {
+    public function eliminar($idmiembros) {
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
-            $cadena = "DELETE FROM `clubes` WHERE `idClubes`= $idClubes";            
+            $cadena = "DELETE FROM `miembros` WHERE `idmiembros`= $idmiembros";            
             if (mysqli_query($con, $cadena)) {
                 return 1;
             } else {
