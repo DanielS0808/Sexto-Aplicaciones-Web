@@ -3,6 +3,11 @@ url
 www.google.com?op=todos
 
 localhost/Sexto-Aplicaciones-Web/Semana01/clase02.php?op=1
+
+localhost/Sexto-Aplicaciones-Web/Semana01/02getpost/controllers/alumnos.controller.php?op=todos
+
+http://localhost/Sexto-Aplicaciones-Web/Semana01/clase01.php
+
 Controlador
 $_GET["op"]
 

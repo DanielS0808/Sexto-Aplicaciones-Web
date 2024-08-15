@@ -10,5 +10,11 @@ switch ($_GET["op"]) {
 		}
 		echo json_encode($todos);
 		break;
+	case "uno":
+		$idAlumno = $_POST["idAlumno"];
+		$datos = $alumnos->uno($idAlumno);
+		$res = mysqli_fetch_assoc($datos);
+		echo json_encode($res);
+		break;
 }
 
