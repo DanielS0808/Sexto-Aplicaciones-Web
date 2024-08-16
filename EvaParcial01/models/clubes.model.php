@@ -21,11 +21,12 @@ class Clubesmodel
         return $datos;
     }
 	
-    public function insertar($Nombre, $Deporte, $Ubicacion, $Fecha_fundacion) {
+    public function insertar($idClubes, $Nombre, $Deporte, $Ubicacion, $Fecha_fundacion) {
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
-            $cadena = "INSERT INTO `clubes` ( `Nombre`, `Deporte`, `Ubicacion`, `Fecha_fundacion`) VALUES ($Nombre, $Deporte, $Ubicacion, $Fecha_fundacion)";
+            #$cadena = "INSERT INTO `clubes` ( `Nombre`, `Deporte`, `Ubicacion`, `Fecha_fundacion`) VALUES ($Nombre, $Deporte, $Ubicacion, $Fecha_fundacion)";
+            $cadena = "INSERT INTO `clubes` (`idClubes`, `Nombre`, `Deporte`, `Ubicacion`, `Fecha_fundacion`) VALUES ($idClubes, '$Nombre', '$Deporte', '$Ubicacion', '$Fecha_fundacion')";
             if (mysqli_query($con, $cadena)) {
                 return $con->insert_id;
             } else {
@@ -43,7 +44,7 @@ class Clubesmodel
             $con = $con->ProcedimientoParaConectar();
             $cadena = "UPDATE `clubes` SET `Nombre`='$Nombre',`Deporte`='$Deporte',`Ubicacion`='$Ubicacion',`Fecha_fundacion`='$Fecha_fundacion' WHERE `idClubes` = $idClubes";
             if (mysqli_query($con, $cadena)) {
-                return $idProveedores;
+                return $idClubes;
             } else {
                 return $con->error;
             }

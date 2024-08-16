@@ -20,12 +20,13 @@ switch ($_GET["op"]) {
         echo json_encode($res);
         break;     
     case 'insertar':
+        $idClubes = $_POST["idClubes"];
         $Nombre = $_POST["Nombre"];
         $Deporte = $_POST["Deporte"];
         $Ubicacion = $_POST["Ubicacion"];
         $Fecha_fundacion = $_POST["Fecha_fundacion"];
         $datos = array();
-        $datos = $clubes->insertar($Nombre, $Deporte, $Ubicacion, $Fecha_fundacion);
+        $datos = $clubes->insertar($idClubes, $Nombre, $Deporte, $Ubicacion, $Fecha_fundacion);
         echo json_encode($datos);
         break;        
     case 'actualizar':
