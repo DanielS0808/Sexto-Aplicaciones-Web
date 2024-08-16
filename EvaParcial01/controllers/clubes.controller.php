@@ -19,14 +19,13 @@ switch ($_GET["op"]) {
         $res = mysqli_fetch_assoc($datos);
         echo json_encode($res);
         break;     
-    case 'insertar':
-        $idClubes = $_POST["idClubes"];
+    case 'insertar':        
         $Nombre = $_POST["Nombre"];
         $Deporte = $_POST["Deporte"];
         $Ubicacion = $_POST["Ubicacion"];
         $Fecha_fundacion = $_POST["Fecha_fundacion"];
         $datos = array();
-        $datos = $clubes->insertar($idClubes, $Nombre, $Deporte, $Ubicacion, $Fecha_fundacion);
+        $datos = $clubes->insertar($Nombre, $Deporte, $Ubicacion, $Fecha_fundacion);
         echo json_encode($datos);
         break;        
     case 'actualizar':

@@ -25,7 +25,7 @@ class Miembrosmodel
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
-            $cadena = "INSERT INTO `miembros` ( `Nombre`, `Apellido`, `Email`, `Telefono`) VALUES ($Nombre, $Apellido, $Email, $Telefono)";
+            $cadena = "INSERT INTO `miembros` ( `Nombre`, `Apellido`, `Email`, `Telefono`) VALUES ('$Nombre', '$Apellido', '$Email', '$Telefono')";
             if (mysqli_query($con, $cadena)) {
                 return $con->insert_id;
             } else {
@@ -37,13 +37,13 @@ class Miembrosmodel
             $con->close();
         }
     }
-    public function actualizar($Nombre, $Apellido, $Email, $Telefono) {
+    public function actualizar($idmiembros, $Nombre, $Apellido, $Email, $Telefono) {
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
             $cadena = "UPDATE `miembros` SET `Nombre`='$Nombre',`Apellido`='$Apellido',`Email`='$Email',`Telefono`='$Telefono' WHERE `idmiembros` = $idmiembros";
             if (mysqli_query($con, $cadena)) {
-                return $idProveedores;
+                return $idmiembros;
             } else {
                 return $con->error;
             }

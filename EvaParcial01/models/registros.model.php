@@ -37,13 +37,13 @@ class Registrosmodel
             $con->close();
         }
     }
-    public function actualizar($Estado, $Fecha_Registro, $Clubes_idClubes, $Miembros_idMiembros) {
+    public function actualizar($idregistros, $Estado, $Fecha_Registro, $Clubes_idClubes, $Miembros_idMiembros) {
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
             $cadena = "UPDATE `registros` SET `Estado`='$Estado',`Fecha_Registro`='$Fecha_Registro',`Clubes_idClubes`='$Clubes_idClubes',`Miembros_idMiembros`='$Miembros_idMiembros' WHERE `idregistros` = $idregistros";
             if (mysqli_query($con, $cadena)) {
-                return $idProveedores;
+                return $idregistros;
             } else {
                 return $con->error;
             }

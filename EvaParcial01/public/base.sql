@@ -18,7 +18,7 @@ USE `Eva01` ;
 -- Table `Eva01`.`Clubes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Eva01`.`Clubes` (
-  `idClubes` INT NOT NULL,
+  `idClubes` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(50) NOT NULL,
   `Deporte` VARCHAR(25) NOT NULL,
   `Ubicacion` VARCHAR(100) NOT NULL,
@@ -31,12 +31,13 @@ ENGINE = InnoDB;
 -- Table `Eva01`.`Miembros`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Eva01`.`Miembros` (
-  `idMiembros` INT NOT NULL,
+  `idMiembros` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(50) NOT NULL,
   `Apellido` VARCHAR(50) NOT NULL,
   `Email` VARCHAR(50) NOT NULL,
   `Telefono` VARCHAR(10) NOT NULL,
-  PRIMARY KEY (`idMiembros`))
+  PRIMARY KEY (`idMiembros`),
+  UNIQUE INDEX `idMiembros_UNIQUE` (`idMiembros` ASC) )
 ENGINE = InnoDB;
 
 
@@ -46,12 +47,13 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Eva01`.`Registros` (
   `idRegistros` INT NOT NULL AUTO_INCREMENT,
   `Estado` INT NOT NULL,
-  `Fecha_Registro` DATE NULL,
+  `Fecha_Registro` VARCHAR(10) NULL,
   `Clubes_idClubes` INT NOT NULL,
   `Miembros_idMiembros` INT NOT NULL,
   PRIMARY KEY (`idRegistros`),
-  INDEX `fk_Registros_Clubes_idx` (`Clubes_idClubes` ASC),
-  INDEX `fk_Registros_Miembros1_idx` (`Miembros_idMiembros` ASC),
+  INDEX `fk_Registros_Clubes_idx` (`Clubes_idClubes` ASC) ,
+  INDEX `fk_Registros_Miembros1_idx` (`Miembros_idMiembros` ASC) ,
+  UNIQUE INDEX `idRegistros_UNIQUE` (`idRegistros` ASC) ,
   CONSTRAINT `fk_Registros_Clubes`
     FOREIGN KEY (`Clubes_idClubes`)
     REFERENCES `Eva01`.`Clubes` (`idClubes`)
