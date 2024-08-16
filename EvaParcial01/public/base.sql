@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `Eva01`.`Clubes` (
   `Nombre` VARCHAR(50) NOT NULL,
   `Deporte` VARCHAR(25) NOT NULL,
   `Ubicacion` VARCHAR(100) NOT NULL,
-  `Fecha_fundacion` DATE NOT NULL,
+  `Fecha_fundacion` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`idClubes`))
 ENGINE = InnoDB;
 
