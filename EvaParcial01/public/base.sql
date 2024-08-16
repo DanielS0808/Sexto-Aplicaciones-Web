@@ -50,8 +50,8 @@ CREATE TABLE IF NOT EXISTS `Eva01`.`Registros` (
   `Clubes_idClubes` INT NOT NULL,
   `Miembros_idMiembros` INT NOT NULL,
   PRIMARY KEY (`idRegistros`),
-  INDEX `fk_Registros_Clubes_idx` (`Clubes_idClubes` ASC) ,
-  INDEX `fk_Registros_Miembros1_idx` (`Miembros_idMiembros` ASC) ,
+  INDEX `fk_Registros_Clubes_idx` (`Clubes_idClubes` ASC),
+  INDEX `fk_Registros_Miembros1_idx` (`Miembros_idMiembros` ASC),
   CONSTRAINT `fk_Registros_Clubes`
     FOREIGN KEY (`Clubes_idClubes`)
     REFERENCES `Eva01`.`Clubes` (`idClubes`)
