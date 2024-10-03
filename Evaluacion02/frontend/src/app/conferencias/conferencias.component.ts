@@ -56,11 +56,13 @@ export class ConferenciasComponent implements OnInit {
   }
 
   agregarConferencia() {
-    this.router.navigate(['/nuevoconferencia']);
+    this.router.navigate(['/nuevaconferencia']);
   }
 
   editarConferencia(id: number) {
-    this.router.navigate(['/nuevoconferencia', id]);
+    this.router.navigate(['/nuevaconferencia', id]);
   }
+
+
 
 }

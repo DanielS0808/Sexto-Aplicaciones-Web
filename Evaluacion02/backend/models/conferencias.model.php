@@ -28,7 +28,7 @@ class Conferencia {
         $con = $con->ProcedimientoParaConectar();
         mysqli_set_charset($con, "utf8");
         $sql = "INSERT INTO conferencias (nombre, fecha, ubicacion, descripcion) 
-                VALUES ('$nombre', '$fecha', '$ubicacion', '$descripcion')";
+                VALUES ('$nombre', '$fecha', '$ubicacion', '$descripcion')";        
         if (mysqli_query($con, $sql)) {
             $id = mysqli_insert_id($con);
             $con->close();

@@ -1,1 +1,104 @@
-<p>nuevaconferencia works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">{{ titulo }}</h4>
+              <p class="card-category">Complete los datos de la Conferencia</p>
+            </div>
+            <div class="card-body">
+              <form #autorForm="ngForm" (ngSubmit)="grabar()" novalidate>
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Nombre"
+                        [(ngModel)]="conferencia.nombre"
+                        name="nombre"
+                        required
+                        #nombre="ngModel"
+                      />
+                      <mat-error *ngIf="nombre.invalid && nombre.touched"
+                        >El nombre es obligatorio.</mat-error
+                      >
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Fecha"
+                        [(ngModel)]="conferencia.fecha"
+                        name="fecha"
+                        required
+                        #fecha="ngModel"
+                      />
+                      <mat-error *ngIf="fecha.invalid && fecha.touched"
+                        >La fecha es obligatoria.</mat-error
+                      >
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Ubicacion"                        
+                        [(ngModel)]="conferencia.ubicacion"
+                        name="ubicacion"
+                        required
+                        #ubicacion="ngModel"
+                      />
+                      <mat-error *ngIf="ubicacion.invalid && ubicacion.touched"
+                        >La ubicacion es obligatorio.</mat-error
+                      >
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Descripcion"
+                        [(ngModel)]="conferencia.descripcion"
+                        name="descripcion"
+                        required
+                        #descripcion="ngModel"
+                      />
+                      <mat-error
+                        *ngIf="descripcion.invalid && descripcion.touched"
+                        >La descripcion es obligatoria.</mat-error
+                      >
+                    </mat-form-field>
+                  </div>
+                </div>
+                <button
+                  mat-raised-button
+                  type="submit"
+                  class="btn btn-danger pull-right"
+                >
+                  Guardar Conferencia
+                </button>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body text-center">
+              <img
+                src="/assets/img/autor.png"
+                class="img-fluid"
+                alt="Imagen Autor"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

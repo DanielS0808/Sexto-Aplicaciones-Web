@@ -6,8 +6,6 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
-import { AutoresComponent } from '../../autores/autores.component';
-import { LibrosComponent } from '../../libros/libros.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
@@ -39,9 +37,7 @@ import { ConferenciasComponent } from 'app/conferencias/conferencias.component';
   declarations: [
     DashboardComponent,
     UserProfileComponent,
-    TableListComponent,
-    AutoresComponent,
-    LibrosComponent,
+    TableListComponent,    
     TypographyComponent,
     IconsComponent,
     MapsComponent,

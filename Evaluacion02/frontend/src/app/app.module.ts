@@ -7,13 +7,11 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { NuevoAutorComponent } from './autores/nuevoautor/nuevoautor.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { NuevoLibroComponent } from './libros/nuevolibro/nuevolibro.component';
 import { MatSelectModule } from '@angular/material/select';
-import { NuevaconferenciaComponent } from './conferencias/nuevaconferencia/nuevaconferencia.component';
-import { NuevoasistenteComponent } from './asistentes/nuevoasistente/nuevoasistente.component';
+import { NuevaConferenciaComponent } from './conferencias/nuevaconferencia/nuevaconferencia.component';
+import { NuevoAsistenteComponent } from './asistentes/nuevoasistente/nuevoasistente.component';
 
 
 @NgModule({
@@ -32,11 +30,9 @@ import { NuevoasistenteComponent } from './asistentes/nuevoasistente/nuevoasiste
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
-    NuevoAutorComponent,
-    NuevoLibroComponent,    
-    NuevaconferenciaComponent,
-    NuevoasistenteComponent
+    AdminLayoutComponent,     
+    NuevaConferenciaComponent,
+    NuevoAsistenteComponent
 
   ],
   providers: [],
