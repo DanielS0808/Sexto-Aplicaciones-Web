@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger d-flex justify-content-between align-items-center">
+                        <div>
+                            <h4 class="card-title">Lista de Procuradores</h4>
+                            <p class="card-category">Gestionar los procuradores registrados</p>
+                        </div>
+                        <button class="btn btn-danger" (click)="agregarProcurador()">Insertar Procurador</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <!--<th>#</th>-->
+                                    <th>ID</th>
+                                    <th>Codigo</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>                                    
+                                    <th>Telefono</th>
+                                    <th>Email</th>
+                                    <th class="text-end">Acciones</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let procurador of procuradores; let i = index">
+                                        <!--<td>{{ i + 1 }}</td>-->
+                                        <td>{{ procurador.pro_id }}</td>
+                                        <td>{{ procurador.pro_cod }}</td>
+                                        <td>{{ procurador.pro_nom }}</td>
+                                        <td>{{ procurador.pro_ape }}</td>                                        
+                                        <td>{{ procurador.pro_cel }}</td>
+                                        <td>{{ procurador.pro_ema }}</td>
+                                        <td class="text-end">
+                                            <button class="btn" (click)="editarProcurador(procurador.pro_id)">
+                                                Editar
+                                            </button>
+                                            <button class="btn" (click)="eliminar(procurador.pro_id)">
+                                                Eliminar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center mt-4">
+                <button class="btn btn-danger" (click)="generarReporte()">Generar Reporte</button> <!-- Botón para generar reporte -->
+            </div>
+        </div>
+    </div>
+  </div>
+  
