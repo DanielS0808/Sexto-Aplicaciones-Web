@@ -68,6 +68,6 @@ $conferencias = [];
 while ($row = mysqli_fetch_assoc($datos)) {
     $conferencias[] = $row;
 }
-$pdf->TablaAsistentes($header, $conferencias);
+$pdf->TablaConferencias($header, $conferencias);
 $pdf->Output();
 ?>
