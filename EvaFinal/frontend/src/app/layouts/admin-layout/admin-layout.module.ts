@@ -19,7 +19,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { ClientesComponent } from 'app/clientes/clientes.component';
 import { ProcuradoresComponent } from 'app/procuradores/procuradores.component';
-
+import { ExpedientesComponent } from 'app/expedientes/expedientes.component';
 
 @NgModule({
   imports: [
@@ -44,8 +44,8 @@ import { ProcuradoresComponent } from 'app/procuradores/procuradores.component';
     NotificationsComponent,
     UpgradeComponent,    
     ClientesComponent,
-    ProcuradoresComponent,
-  ]
+    ProcuradoresComponent,    
+    ExpedientesComponent,  ]
 })
 
 export class AdminLayoutModule {}

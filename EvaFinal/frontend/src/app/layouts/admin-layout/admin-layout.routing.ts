@@ -12,6 +12,8 @@ import { ClientesComponent } from '../../clientes/clientes.component';
 import { NuevoClienteComponent } from '../../clientes/nuevocliente/nuevocliente.component';
 import { ProcuradoresComponent } from '../../procuradores/procuradores.component';
 import { NuevoProcuradorComponent } from '../../procuradores/nuevoprocurador/nuevoprocurador.component';  
+import { ExpedientesComponent } from '../../expedientes/expedientes.component';
+import { NuevoexpedienteComponent } from '../../expedientes/nuevoexpediente/nuevoexpediente.component';
 
 export const AdminLayoutRoutes: Routes = [   
     { path: 'dashboard',      component: DashboardComponent },
@@ -27,5 +29,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'nuevocliente/:id', component: NuevoClienteComponent},
     { path: 'procuradores', component: ProcuradoresComponent},
     { path: 'nuevoprocurador', component: NuevoProcuradorComponent},
-    { path: 'nuevoprocurador/:id', component: NuevoProcuradorComponent}
+    { path: 'nuevoprocurador/:id', component: NuevoProcuradorComponent},
+    { path: 'expedientes', component: ExpedientesComponent},
+    { path: 'nuevoexpediente', component: NuevoexpedienteComponent},
+    { path: 'nuevoexpediente/:id', component: NuevoexpedienteComponent}
 ];

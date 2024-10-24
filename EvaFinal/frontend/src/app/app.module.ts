@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { NuevoClienteComponent } from './clientes/nuevocliente/nuevocliente.component';
 import { NuevoProcuradorComponent } from './procuradores/nuevoprocurador/nuevoprocurador.component';
-
+import { NuevoexpedienteComponent } from './expedientes/nuevoexpediente/nuevoexpediente.component';
 
 @NgModule({
   imports: [
@@ -32,7 +32,8 @@ import { NuevoProcuradorComponent } from './procuradores/nuevoprocurador/nuevopr
     AppComponent,
     AdminLayoutComponent,    
     NuevoClienteComponent,     
-    NuevoProcuradorComponent
+    NuevoProcuradorComponent, 
+    NuevoexpedienteComponent    
   ],
   providers: [],
   bootstrap: [AppComponent]
